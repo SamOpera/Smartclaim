@@ -68,7 +68,7 @@ function App() {
 
   const toggleWalletConnection = async () => {
     if (!window.ethereum) {
-      alert("MetaMask not detected. Please open this site inside the MetaMask mobile app or install MetaMask.");
+      alert("MetaMask not detected?. Please open this site inside the MetaMask mobile app or install MetaMask.");
       return;
     }
 
@@ -153,19 +153,16 @@ function App() {
         </button>
         {account && <p><strong>Connected Wallet:</strong> {account}</p>}
 
-        {!window.ethereum && (
-          <p style={{ color: "red", fontWeight: "bold" }}>
-            ⚠ MetaMask not detected.{" "}
-            <a
-              href="https://metamask.app.link/dapp/samopera.github.io/smartclaim"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "blue" }}
-            >
-              Open in MetaMask App
-            </a>
-          </p>
-        )}
+       {!window.ethereum && account === null && (
+  <p style={{ color: "red", fontWeight: "bold", marginTop: "1rem" }}>
+    ⚠ MetaMask not detected on this device.
+    Please use MetaMask mobile browser or install it from{" "}
+    <a href="https://metamask.io/download/" target="_blank" rel="noreferrer" style={{ color: "blue" }}>
+      metamask.io
+    </a>
+  </p>
+)}
+
       </div>
 
       <section>
