@@ -139,7 +139,7 @@ function App() {
 
       <div className="wallet-status">
         <button className="wallet-btn" onClick={toggleWalletConnection}>
-          {account ? "❌ Disconnect Wallet" : "🔌 Connect Wallet"}
+          {account ? "❌ Disconnect Wallet" : " Connect Wallet"}
         </button>
         {account && <p><strong>Connected Wallet:</strong> {account}</p>}
       </div>
@@ -163,8 +163,8 @@ function App() {
       <section>
         <h2>Admin Controls</h2>
         <input type="text" placeholder="Policy ID (Admin)" value={adminPolicyId} onChange={(e) => setAdminPolicyId(e.target.value)} />
-        <button onClick={approveClaim}>✅ Approve Claim</button>
-        <button onClick={payoutClaim}>💰 Payout</button>
+        <button onClick={approveClaim}> Approve Claim</button>
+        <button onClick={payoutClaim}> Payout</button>
       </section>
     </div>
   );
