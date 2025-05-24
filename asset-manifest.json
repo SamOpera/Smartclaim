@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Smartclaim/static/css/main.76cb6c59.css",
-    "main.js": "/Smartclaim/static/js/main.aa929654.js",
+    "main.js": "/Smartclaim/static/js/main.cb91bd0d.js",
     "static/js/453.8ab44547.chunk.js": "/Smartclaim/static/js/453.8ab44547.chunk.js",
     "static/media/logo.png": "/Smartclaim/static/media/logo.33cca0d64fa73b59551d.png",
     "index.html": "/Smartclaim/index.html",
     "main.76cb6c59.css.map": "/Smartclaim/static/css/main.76cb6c59.css.map",
-    "main.aa929654.js.map": "/Smartclaim/static/js/main.aa929654.js.map",
+    "main.cb91bd0d.js.map": "/Smartclaim/static/js/main.cb91bd0d.js.map",
     "453.8ab44547.chunk.js.map": "/Smartclaim/static/js/453.8ab44547.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.76cb6c59.css",
-    "static/js/main.aa929654.js"
+    "static/js/main.cb91bd0d.js"
   ]
 }
