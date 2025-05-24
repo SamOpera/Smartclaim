@@ -66,9 +66,16 @@ function App() {
     }
   }, [account]);
 
-  const toggleWalletConnection = async () => {
+ const toggleWalletConnection = async () => {
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
   if (!window.ethereum) {
-    alert("MetaMask not detected. Please open this site inside the MetaMask mobile app or install MetaMask.");
+    if (isMobile) {
+      const dappUrl = "samopera.github.io/smartclaim"; // Your hosted dApp URL
+      window.location.href = `https://metamask.app.link/dapp/${dappUrl}`;
+    } else {
+      alert("MetaMask not detected. Please install MetaMask extension for desktop.");
+    }
     return;
   }
 
@@ -85,6 +92,7 @@ function App() {
     setContract(null);
   }
 };
+
 
 
   const registerPolicy = async () => {
