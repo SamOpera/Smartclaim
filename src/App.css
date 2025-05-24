@@ -1,0 +1,54 @@
+.app {
+  font-family: Arial, sans-serif;
+  max-width: 700px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #f4f6f8;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+input, button {
+  display: block;
+  margin: 0.5rem 0;
+  padding: 0.6rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #2d6cdf;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1e4cb0;
+}
+
+section {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.wallet-btn {
+  margin: 1rem 0;
+  padding: 0.6rem 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.wallet-btn:hover {
+  background-color: #3e8e41;
+}
