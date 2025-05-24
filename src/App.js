@@ -67,24 +67,25 @@ function App() {
   }, [account]);
 
   const toggleWalletConnection = async () => {
-    if (!window.ethereum) {
-      alert("MetaMask not detected?. Please open this site inside the MetaMask mobile app or install MetaMask.");
-      return;
-    }
+  if (!window.ethereum) {
+    alert("MetaMask not detected. Please open this site inside the MetaMask mobile app or install MetaMask.");
+    return;
+  }
 
-    if (!account) {
-      try {
-        const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
-        setAccount(accounts[0]);
-      } catch (error) {
-        console.error("Wallet connection rejected.");
-      }
-    } else {
-      setAccount(null);
-      setProvider(null);
-      setContract(null);
+  if (!account) {
+    try {
+      const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
+      setAccount(accounts[0]);
+    } catch (error) {
+      console.error("Wallet connection rejected.");
     }
-  };
+  } else {
+    setAccount(null);
+    setProvider(null);
+    setContract(null);
+  }
+};
+
 
   const registerPolicy = async () => {
     try {
@@ -153,16 +154,7 @@ function App() {
         </button>
         {account && <p><strong>Connected Wallet:</strong> {account}</p>}
 
-       {!window.ethereum && account === null && (
-  <p style={{ color: "red", fontWeight: "bold", marginTop: "1rem" }}>
-    ⚠ MetaMask not detected on this device.
-    Please use MetaMask mobile browser or install it from{" "}
-    <a href="https://metamask.io/download/" target="_blank" rel="noreferrer" style={{ color: "blue" }}>
-      metamask.io
-    </a>
-  </p>
-)}
-
+        
       </div>
 
       <section>
