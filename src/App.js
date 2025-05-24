@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserProvider, Contract, parseEther } from "ethers";
 import "./App.css";
+import logo from "./logo.png";
 
 const contractAddress = "0xd9145CCE52D386f254917e481eB44e9943F39138";
 const contractABI = [
@@ -66,6 +67,11 @@ function App() {
   }, [account]);
 
   const toggleWalletConnection = async () => {
+    if (!window.ethereum) {
+      alert("MetaMask not detected. Please open this site inside the MetaMask mobile app or install MetaMask.");
+      return;
+    }
+
     if (!account) {
       try {
         const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
@@ -135,13 +141,31 @@ function App() {
 
   return (
     <div className="app">
+      <div style={{ textAlign: "center" }}>
+        <img src={logo} alt="Logo" style={{ height: "60px", marginTop: "1rem", borderRadius: "10px", boxShadow: "0 4px 10px rgba(0,0,0,0.15)" }} />
+      </div>
+
       <h1>SmartClaim Insurance dApp</h1>
 
       <div className="wallet-status">
         <button className="wallet-btn" onClick={toggleWalletConnection}>
-          {account ? "❌ Disconnect Wallet" : " Connect Wallet"}
+          {account ? "❌ Disconnect Wallet" : "🔗 Connect Wallet"}
         </button>
         {account && <p><strong>Connected Wallet:</strong> {account}</p>}
+
+        {!window.ethereum && (
+          <p style={{ color: "red", fontWeight: "bold" }}>
+            ⚠ MetaMask not detected.{" "}
+            <a
+              href="https://metamask.app.link/dapp/samopera.github.io/smartclaim"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "blue" }}
+            >
+              Open in MetaMask App
+            </a>
+          </p>
+        )}
       </div>
 
       <section>
@@ -163,8 +187,8 @@ function App() {
       <section>
         <h2>Admin Controls</h2>
         <input type="text" placeholder="Policy ID (Admin)" value={adminPolicyId} onChange={(e) => setAdminPolicyId(e.target.value)} />
-        <button onClick={approveClaim}> Approve Claim</button>
-        <button onClick={payoutClaim}> Payout</button>
+        <button onClick={approveClaim}>✅ Approve Claim</button>
+        <button onClick={payoutClaim}>💸 Payout</button>
       </section>
     </div>
   );

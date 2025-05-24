@@ -23,14 +23,14 @@ input, button {
 }
 
 button {
-  background-color: #2d6cdf;
+  background-color:rgb(165, 110, 8);
   color: white;
   font-weight: bold;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #1e4cb0;
+  background-color: rgb(182, 121, 9);
 }
 
 section {
@@ -43,12 +43,28 @@ section {
 .wallet-btn {
   margin: 1rem 0;
   padding: 0.6rem 1rem;
-  background-color: #2d6cdf;
+  background-color: rgb(165, 110, 8);
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
 }
 .wallet-btn:hover {
-  background-color: #3e8e41;
+  background-color: rgb(182, 121, 9);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+background: linear-gradient(to right, #fff7e6, #f2c98a); /* light creamy to golden */
+  min-height: 100vh;
+}
+
+/* Centered logo at the top */
+.app-logo {
+  display: block;
+  margin: 2rem auto 1rem auto;
+  height: 60px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
