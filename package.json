@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://samopera.github.io/Smartclaim",
+  "homepage": "https://samopera.github.io/Smartclaim",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -20,7 +20,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "build-vercel": "PUBLIC_URL=. react-scripts build"
   },
   "eslintConfig": {
     "extends": [
@@ -43,13 +44,4 @@
   "devDependencies": {
     "gh-pages": "^6.3.0"
   }
-}
-"scripts": {
-  "start": "react-scripts start",
-  "build": "react-scripts build",
-  "test": "react-scripts test",
-  "eject": "react-scripts eject",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build",
-  "build-vercel": "PUBLIC_URL=. react-scripts build"
 }
